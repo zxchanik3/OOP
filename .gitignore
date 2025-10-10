@@ -1,0 +1,13 @@
+# Visual Studio Cache and Logs
+.vs/
+*.suo
+*.user
+*.log
+
+# Build Output
+[Bb]in/
+[Oo]bj/
+
+# C# / .NET Files
+*.pdb
+*.bak
