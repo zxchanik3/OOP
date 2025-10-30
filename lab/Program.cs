@@ -1,8 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Text.Json;
 using System;
 using System.IO;
-using System.Linq;
 
 
 public class Track
@@ -160,12 +157,6 @@ class Program
             Console.WriteLine($"{d.Number}: {d.Name} (Locked: {d.Lock})");
         }
 
-        //Видалення гонщика зі списку
-        Console.WriteLine("\nВведіть номер гонщика для видалення:");
-        if (int.TryParse(Console.ReadLine(), out int delNum))
-        {
-            gameData.RemoveDriver(delNum);
-            gameData.SaveToFile(path);
         }
     }
 }
