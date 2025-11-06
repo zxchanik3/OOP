@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace lab
 {
-    public class Race
+    public enum RaceStatus
     {
-        public Track CurrentTrack { get; set; }
-     //   public List<Driver> Participants { get; set; }
-        
+        NotStarted,
+        Active,
+        Finished,
+        Paused
     }
 }
