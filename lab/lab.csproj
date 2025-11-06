@@ -7,4 +7,18 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Car.cs" />
+    <Compile Remove="Driver.cs" />
+    <Compile Remove="GameData.cs" />
+    <Compile Remove="Tyres.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Car.cs" />
+    <None Include="Driver.cs" />
+    <None Include="GameData.cs" />
+    <None Include="Tyres.cs" />
+  </ItemGroup>
+
 </Project>
