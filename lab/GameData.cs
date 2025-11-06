@@ -104,13 +104,13 @@ namespace lab
             Console.WriteLine("Дані завантажено.");
         }
 
-        public void AddTyres(Tyres tyre)
+        public void AddTyre(Tyre tyre)
         {
             Tyres.Add(tyre);
             Console.WriteLine($"Додано шини типу: {tyre.Type}");
         }
 
-        public void RemoveTyres(string type)
+        public void RemoveTyre(string type)
         {
             var tyre = Tyres.FirstOrDefault(t => t.Type == type);
             if (tyre == null)
@@ -122,23 +122,23 @@ namespace lab
             Console.WriteLine($"Шини типу {tyre.Type} видалено.");
         }
 
-        public void TyresSaveToFile(string path)
+        public void TyreSaveToFile(string path)
         {
             string json = JsonSerializer.Serialize(Tyres, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(path, json);
             Console.WriteLine("Дані збережено.");
         }
 
-        public void TyresLoadFromFile(string path)
+        public void TyreLoadFromFile(string path)
         {
             if (!File.Exists(path))
             {
                 Console.WriteLine("Файл не знайдено.");
-                Tyres = new List<Tyres>();
+                Tyres = new List<Tyre>();
                 return;
             }
             string json = File.ReadAllText(path);
-            Tyres = JsonSerializer.Deserialize<List<Tyres>>(json) ?? new List<Tyres>();
+            Tyres = JsonSerializer.Deserialize<List<Tyre>>(json) ?? new List<Tyre>();
             Console.WriteLine("Дані завантажено.");
         }
     }
