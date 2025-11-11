@@ -2,7 +2,7 @@ using System;
 
 namespace lab
 {
-	class Tyre
+	public class Tyre
 	{
 		public string Type { get; set; }
 		public int Durability { get; set; }

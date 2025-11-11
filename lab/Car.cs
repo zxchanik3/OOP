@@ -16,7 +16,7 @@ namespace lab
 
 		public Car() { }
 
-		public Car(string model, int year, int horsepower, Tyres tyre, int acceleration)
+		public Car(string model, int year, int horsepower, Tyre tyre, int acceleration)
 		{
 			Model = model;
 			Year = year;
