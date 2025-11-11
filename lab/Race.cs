@@ -9,7 +9,10 @@ namespace lab
     public class Race
     {
         public Track CurrentTrack { get; set; }
-     //   public List<Driver> Participants { get; set; }
+
+        public List<Driver> Participants { get; set; } = new List<Driver>();
+        public List<Car> Cars { get; set; } = new List<Car>();
+
         public RaceStatus Status { get; set; }
         public Dictionary<string, double> Results { get; set; }
 
@@ -24,16 +27,19 @@ namespace lab
             CurrentTrack = track;
         }
 
-        public void AddParticipant(string name)
+        public void AddParticipant(Driver driver, Car car)
         {
-            if (!Results.ContainsKey(name))
+            if (Participants.Contains(driver))
             {
-                Results.Add(name, 0.0);
+                Console.WriteLine($"Учасник '{driver.Name}' вже в гонці!");
+                return;
             }
-            else
-            {
-                Console.WriteLine("Учасник '{name}' вже в гонці.");
-            }
+            Participants.Add(driver);
+            Cars.Add(car);
+
+            Results.Add(driver.Name, 0.0);
+
+            Console.WriteLine($"До гонки додано: {driver.Name} на {car.Model}");
         }
 
         public void StartRace()
