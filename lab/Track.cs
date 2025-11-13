@@ -17,6 +17,8 @@ namespace lab
 
         public int SectorsCount { get; set; }
 
+        public List<TrackSegment> Segments { get; set; } = new List<TrackSegment>();
+        
         public Track()
         {
             Name = "Default Track";
@@ -51,7 +53,14 @@ namespace lab
             Console.WriteLine($"Секторів: {SectorsCount}");
             Console.WriteLine($"Координати старту: ({StartLineX}, {StartLineY})");
         }
-
+        
+        public void InitializeSegments() 
+        {
+            Segments.Add(new TrackSegment(SegmentType.StartFinish, 1.0, 1.0, 0, 0.01f)); // Довга пряма
+            Segments.Add(new TrackSegment(SegmentType.Corner, 0.5, 0.4, 150.0, 0.05f)); // Поворот
+            Segments.Add(new TrackSegment(SegmentType.Straight, 2.0, 1.0, 0, 0.01f));  // Пряма
+        }
+        
         ~Track() { }
     }
 }
